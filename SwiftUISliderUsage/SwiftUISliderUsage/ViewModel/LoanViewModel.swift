@@ -36,8 +36,13 @@ final class LoanViewModel: ObservableObject {
         }
     }
     
-    func filterLoanAmount(amount: Int) {
+    func sortedLoan() -> [Loan]? {
         
+        filterdLoans?.sorted(by: { ($0.loanAmount ?? 0) > ($1.loanAmount ?? 0) })
+        
+    }
+    
+    func filterLoanAmount(amount: Int) {
         
         filterdLoans = loans?.filter({ ($0.loanAmount ?? 0) <= amount})
     }

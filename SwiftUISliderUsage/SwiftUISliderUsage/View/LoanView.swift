@@ -16,7 +16,7 @@ struct LoanView: View {
         NavigationView {
            
             List {
-                ForEach(viewModel.filterdLoans ?? []) { loan in
+                ForEach(viewModel.sortedLoan() ?? []) { loan in
                     LoanCellView(loan: loan)
                 }
             }
