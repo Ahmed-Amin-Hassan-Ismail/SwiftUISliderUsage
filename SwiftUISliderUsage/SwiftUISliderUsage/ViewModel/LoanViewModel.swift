@@ -10,8 +10,10 @@ import Foundation
 
 final class LoanViewModel: ObservableObject {
     
-    @Published var loans: [Loan]?
-    
+    @Published private var loans: [Loan]?
+    @Published var filterdLoans: [Loan]?
+    @Published var showFilterView: Bool = false
+    @Published var maxAmount: Double = 10_000
     
     
     init() {
@@ -43,6 +45,7 @@ final class LoanViewModel: ObservableObject {
                 DispatchQueue.main.async {
                     
                     self.loans = model.loans
+                    self.filterdLoans = model.loans
                 }
                 
             } catch (let error) {
@@ -52,5 +55,11 @@ final class LoanViewModel: ObservableObject {
         }
         
         task.resume()
+    }
+    
+    func filterLoanAmount(amount: Int) {
+        
+        
+        filterdLoans = loans?.filter({ ($0.loanAmount ?? 0) <= amount})
     }
 }
