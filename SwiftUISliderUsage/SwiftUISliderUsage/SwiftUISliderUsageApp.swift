@@ -11,7 +11,8 @@ import SwiftUI
 struct SwiftUISliderUsageApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            LoanView()
+                .preferredColorScheme(.dark)
         }
     }
 }
