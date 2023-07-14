@@ -21,11 +21,6 @@ class NetworkRequest {
                 return
             }
             
-            debugPrint(response)
-            
-            debugPrint(data)
-            
-            
             // Pars JSON data
             do {
                 guard let data = data else { return }

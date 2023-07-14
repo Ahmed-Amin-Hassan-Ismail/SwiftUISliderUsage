@@ -15,6 +15,8 @@
 		ACE3E1102A61D38400F9E38B /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE3E10F2A61D38400F9E38B /* NetworkRequest.swift */; };
 		ACE3E1122A61D51D00F9E38B /* LoanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE3E1112A61D51D00F9E38B /* LoanViewModel.swift */; };
 		ACE3E1142A61D69100F9E38B /* LoanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE3E1132A61D69100F9E38B /* LoanView.swift */; };
+		ACE3E1162A61DAED00F9E38B /* LoanCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE3E1152A61DAED00F9E38B /* LoanCellView.swift */; };
+		ACE3E1192A61DB1900F9E38B /* ProviderPreview + EXT.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE3E1182A61DB1900F9E38B /* ProviderPreview + EXT.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		ACE3E10F2A61D38400F9E38B /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		ACE3E1112A61D51D00F9E38B /* LoanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoanViewModel.swift; sourceTree = "<group>"; };
 		ACE3E1132A61D69100F9E38B /* LoanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoanView.swift; sourceTree = "<group>"; };
+		ACE3E1152A61DAED00F9E38B /* LoanCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoanCellView.swift; sourceTree = "<group>"; };
+		ACE3E1182A61DB1900F9E38B /* ProviderPreview + EXT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProviderPreview + EXT.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				ACE3E0F92A61CACF00F9E38B /* SwiftUISliderUsageApp.swift */,
+				ACE3E1172A61DB0900F9E38B /* Extension */,
 				ACE3E10A2A61CF7F00F9E38B /* Networking */,
 				ACE3E1072A61CF6900F9E38B /* Model */,
 				ACE3E1082A61CF6D00F9E38B /* ViewModel */,
@@ -99,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				ACE3E1132A61D69100F9E38B /* LoanView.swift */,
+				ACE3E1152A61DAED00F9E38B /* LoanCellView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -109,6 +115,14 @@
 				ACE3E10F2A61D38400F9E38B /* NetworkRequest.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		ACE3E1172A61DB0900F9E38B /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				ACE3E1182A61DB1900F9E38B /* ProviderPreview + EXT.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,9 +198,11 @@
 				ACE3E10C2A61CF8800F9E38B /* Loan.swift in Sources */,
 				ACE3E1122A61D51D00F9E38B /* LoanViewModel.swift in Sources */,
 				ACE3E0FA2A61CACF00F9E38B /* SwiftUISliderUsageApp.swift in Sources */,
+				ACE3E1162A61DAED00F9E38B /* LoanCellView.swift in Sources */,
 				ACE3E1142A61D69100F9E38B /* LoanView.swift in Sources */,
 				ACE3E10E2A61CFE700F9E38B /* LoanRequest.swift in Sources */,
 				ACE3E1102A61D38400F9E38B /* NetworkRequest.swift in Sources */,
+				ACE3E1192A61DB1900F9E38B /* ProviderPreview + EXT.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

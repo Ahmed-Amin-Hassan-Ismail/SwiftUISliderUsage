@@ -12,7 +12,17 @@ struct LoanView: View {
     @StateObject private var viewModel = LoanViewModel()
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        NavigationView {
+           
+            List {
+                ForEach(viewModel.loans ?? []) { loan in
+                    LoanCellView(loan: loan)
+                }
+            }
+            .listStyle(.plain)
+            .navigationTitle("Kiva Loan")
+        }
     }
 }
 
