@@ -26,40 +26,25 @@ final class LoanViewModel: ObservableObject {
         
         guard let url = URL(string: "https://api.kivaws.org/v1/loans/newest.json") else { return }
         
-        let requst = URLRequest(url: url)
-        let task = URLSession.shared.dataTask(with: requst) { [weak self] data, response, error in
-            
+        NetworkRequest<LoanRequest>.requestLoans(url: url) { [weak self] model in
             guard let self = self else { return }
-            
-            if let error = error {
-                print(error)
-                return
-            }
-            
-            do {
+            DispatchQueue.main.async {
                 
-                guard let data = data else { return }
-                
-                let model = try JSONDecoder().decode(LoanRequest.self, from: data)
-                
-                DispatchQueue.main.async {
-                    
-                    self.loans = model.loans
-                    self.filterdLoans = model.loans
-                }
-                
-            } catch (let error) {
-                
-                print(error.localizedDescription)
+                self.loans = model.loans
+                self.filterdLoans = model.loans
             }
         }
-        
-        task.resume()
     }
     
     func filterLoanAmount(amount: Int) {
         
         
         filterdLoans = loans?.filter({ ($0.loanAmount ?? 0) <= amount})
+    }
+    
+    func filterReset() {
+        
+        maxAmount = 10_000
+        filterdLoans = loans
     }
 }

@@ -9,9 +9,9 @@ import Foundation
 
 
 
-class NetworkRequest {
+class NetworkRequest<T: Codable>{
     
-    static func requestLoans<T: Decodable>(model: T, url: URL) {
+    static func requestLoans(url: URL, completionHandler: ((_ model: T) -> Void)?) {
         
         let request = URLRequest(url: url)
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
@@ -24,8 +24,9 @@ class NetworkRequest {
             // Pars JSON data
             do {
                 guard let data = data else { return }
-                let decoder = try JSONDecoder().decode(T.self, from: data)
-                print(decoder)
+                let model = try JSONDecoder().decode(T.self, from: data)
+                
+                completionHandler?(model)
                 
             } catch {
                 print(error.localizedDescription)

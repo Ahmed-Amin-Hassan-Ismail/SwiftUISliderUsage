@@ -23,7 +23,15 @@ struct LoanFilterView: View {
         VStack(alignment: .trailing) {
             
             
-            dismissButton
+            HStack {
+                
+               clearButton
+                
+                Spacer()
+                
+                dismissButton
+                
+            }
             
             Spacer()
             
@@ -50,6 +58,18 @@ extension LoanFilterView {
         }
     }
     
+    private var clearButton: some View {
+        Button {
+         
+            viewModel.filterReset()
+            
+        } label: {
+            Text("Clear")
+                .font(.system(.title2, design: .rounded))
+                .foregroundColor(.purple)
+        }
+    }
+    
     private var filterView: some View {
         VStack(alignment: .leading) {
             
@@ -60,6 +80,7 @@ extension LoanFilterView {
                 
                 Slider(value: $viewModel.maxAmount, in: minAmount...maxAmount, step: sliderStep, onEditingChanged: { _ in
                     viewModel.filterLoanAmount(amount: Int(viewModel.maxAmount))
+                    
                 })
                     .accentColor(.purple)
                 
